@@ -1,0 +1,72 @@
+First, I need to diagnose the problem.
+
+Issues:
+1. Bluetooth causes Zoom to crash
+2. Bluetooth service must be restarted in order to switch audio profiles
+
+MY CURRENT HARDWARE / SOFTWARE SETUP (5-10-22 2:45pm)
+bluez, bluez-utils is installed
+bluetoothctl
+blueman
+	-Does blueman have any known issues with Zoom?
+
+[WF-1000XM4]# bluetoothctl show
+Controller F0:9E:4A:3F:F8:B2 (public)
+	Name:
+	Alias:
+	Class: 0x007c010c
+	Powered:
+	Discoverable:
+	DiscoverableTimeout:
+	Pairable:
+	UUID:
+	Modalias:
+	Discovering:
+	Roles:
+
+General Notes from the Arch Wiki:
+the generic bluetooth drive is the btusb kernel module.
+( you can check whether a module is loaded by:	)
+(	$ lsmod					)
+
+
+
+
+
+
+NOTES FROM TALK:
+https://www.youtube.com/watch?v=O9ocyiM_hGM&ab_channel=TheDianaInitiative
+the canonical implementation of the Bluetooth protocol stack is BlueZ
+
+BlueZ provides support for the core Bluetooth layers and protocols
+	- Complete modular implementation
+	- Symmetric multi-processing safe
+	- Multithreaded data processing
+	- Support for multiple Bluetooth devices
+	- Real hardware abstraction
+	- Standard socket interface to all layers
+	- Device and service level security support.
+BlueZ consists of many separate modules
+	1. Bluetooth kernel subsystem core
+	2. L2CAP and SCO audio kernel layers
+	3. RFCOMM, BNEP, CMPT, HIDP kernel implementations
+	4. HCI UART, USB, PCMCIA and virtual device drivers
+	5. General Bluetooth and SDP libraries and daemons
+	6. Configuration and testing utilities
+	7. Protocol decoding and analysis tools
+
+Generic Attribute tool, "GATool"
+
+Platforms/Distributions (Why are CPU's called "platforms"?)
+	Platforms:
+		Intel and AMD x86
+		(among many others)
+	Distributions:
+		Debian GNU/Linux
+		Ubuntu 
+		Fedora Core / Red Hat
+		OpenSuSE / SuSE
+		Mandrake
+		Gentoo
+
+

@@ -1,0 +1,3 @@
+A language culture exchange app.
+	Allows users to find and share quality content in their target language
+	Allows users to request translations of documents

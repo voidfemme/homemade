@@ -44,7 +44,7 @@ int main()
 	std::cout << "Enter 15: ";
 	std::cin >> guess;
 	// correct answer should be first in logic, in case the correct answer is given on the first try
-	
+
 	// I need a basic loop to both check for a valid answer and immediately afterwards, for the correct answer
 	while()
 	{

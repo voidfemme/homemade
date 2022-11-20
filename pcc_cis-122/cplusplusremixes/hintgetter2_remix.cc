@@ -1,24 +1,53 @@
 #include <iostream>
 #include <string>
 
-int main()
+string UserInput(string guess)
 {
 	string guess = "";
 	std::cout << "Enter 15: ";
 	std::cin >> guess;
+    return guess;
+}
 
+bool IsDigit(sting input_string)
+{
+    for(int i=0; i<input_string.size();i++)
+    {
+        if(!IsDigit(input_string[i])) {return false}
+    }
+    else {return true}
+}
+
+bool InputValidate(string input_string)
+{
+    while()
+    {
+        if(IsDigit(input_string)) {return true}
+        else {return false}
+    }
+}
+
+int main()
+{
+    bool flag = false;
+
+    while(flag == false)
+    {
+        if(InputVerify(guess) == false)
+        {
+            guess = UserInput();
+        }
+        if(InputValidate(guess) == false)
+        {
+            guess = UserInput();
+        }
+    }
 	// if (verify input)
 	// 	{ return true }
 	// if (verify answer)
 	// 	{return true}
 
 }
-
-/* Inputs: usernum
- * 	   
- * 
- * 
- */
 
 /* if input
  * 	A. Verify input

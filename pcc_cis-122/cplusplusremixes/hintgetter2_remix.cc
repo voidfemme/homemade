@@ -33,11 +33,7 @@ int main()
 
     while(flag == false)
     {
-        if(InputVerify(guess) == false)
-        {
-            guess = UserInput();
-        }
-        if(InputValidate(guess) == false)
+        if(InputVerify(guess) == true || InputValidate(guess) == true)
         {
             guess = UserInput();
         }

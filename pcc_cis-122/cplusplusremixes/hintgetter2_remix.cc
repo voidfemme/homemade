@@ -1,56 +1,57 @@
 #include <iostream>
 #include <string>
 
-string UserInput(string guess)
+std::string UserInput()
 {
-	string guess = "";
-	std::cout << "Enter 15: ";
-	std::cin >> guess;
-    return guess;
+    std::string user_input;
+    std::cout << "Please enter a number: ";
+    std::cin >> user_input;
+    return user_input;
 }
 
-bool IsDigit(sting input_string)
+bool Validate(std::string input_string)
 {
-    for(int i=0; i<input_string.size();i++)
+    for(int i=0; i<input_string.size(); i++)
     {
-        if(!IsDigit(input_string[i])) {return false}
+        if(!isdigit(input_string[i]))
+        {
+            std::cout << "Failure! not a number." << std::endl;
+            return false;
+        }
     }
-    else {return true}
+    return true;
 }
 
-bool InputValidate(string input_string)
+bool VerifyAns(std::string input_string)
 {
-    while()
+    if(input_string == "8")
     {
-        if(IsDigit(input_string)) {return true}
-        else {return false}
+        std::cout << "Success!" << std::endl;
+        return true;
+    }
+    else
+    {
+        std::cout << "Failure! Incorrect Answer." << std::endl;
+        return false;
     }
 }
 
 int main()
 {
     bool flag = false;
-
+    std::string user_input;
     while(flag == false)
     {
-        if(InputVerify(guess) == true || InputValidate(guess) == true)
+        user_input = UserInput();
+        flag = Validate(user_input);
+        if(flag == true)
         {
-            guess = UserInput();
+            flag = VerifyAns(user_input);
+        }
+        else
+        {
+            flag = false;
         }
     }
-	// if (verify input)
-	// 	{ return true }
-	// if (verify answer)
-	// 	{return true}
-
+    return 0;
 }
-
-/* if input
- * 	A. Verify input
- * Verify input
- * 	A. input = not an int; return to line 26
- * 	B. input = int; continue
- * Verify answer
- * 	A. input = incorrect; return to line 26
- * 	B. input = correct; continue
- */

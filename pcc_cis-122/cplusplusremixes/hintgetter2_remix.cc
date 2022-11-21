@@ -32,14 +32,31 @@ bool VerifyAns(std::string input_string)
     else
     {
         std::cout << "Failure! Incorrect Answer." << std::endl;
+        CycleHints(incorrect_answer_counter);
         return false;
     }
 }
 
+void CycleHints(int guess_num)
+{
+    switch (guess_num % 3)
+    {
+        case 0:
+            std::cout << "hint 1" << std::endl;
+            break;
+        case 1:
+            std::cout << "hint 2" << std::endl;
+            break;
+        case 2:
+            std::cout << "hint 3" << std::endl;
+            break;
+    }
+}
 int main()
 {
     bool flag = false;
     std::string user_input;
+    int incorrect_answer_counter = 0;
     while(flag == false)
     {
         user_input = UserInput();
@@ -51,6 +68,7 @@ int main()
         else
         {
             flag = false;
+            incorrect_answer_counter++;
         }
     }
     return 0;

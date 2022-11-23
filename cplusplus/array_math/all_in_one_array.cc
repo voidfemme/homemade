@@ -15,7 +15,7 @@ int main()
 	p = new char;
 	char** q = nullptr;
 	q = new char*;
-	
+
 	q[0] = &p[0];
 
 	std::cout << "expression: ";
@@ -28,7 +28,7 @@ int main()
 
 	for(int i=0; i<counter; i++)
 	{
-		if(p[i] == '+') 
+		if(p[i] == '+')
 		{
 			std::cout << p[i - 1] << " PLUS " << p[i + 1] << " EQUALS " << p[i - 1] + p[i+1];
 		}

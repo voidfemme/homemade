@@ -13,14 +13,14 @@ bool Validate(std::string input_string)
     return true;
 }
 
-bool Verify(std::string x)
+bool Verify(std::string input_string)
 {
-    if (stoi(x) % 4 == 0)
+    std::cout << "FirstBool\n";
+    for(int i=0; i<input_string.size(); i++)
     {
-        std::cout << "      " << x << " IS A DIGIT AND DIVISIBLE 4" << std::endl;
-        return true;
+        if(!isdigit(input_string[i])) {return true;}
     }
-    else {return false;}
+    return false;
 }
 
 bool Success()

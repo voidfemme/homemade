@@ -1,12 +1,15 @@
 #include <iostream>
 
-void printArray(char* p, int arr_sz, bool dir, int multiplier)
+void printArray(char* p, int arr_sz, bool dir, int multiplier, int constrain)
 {
     int inversion = 0;
     int x = 0;
     int index = 0;
-    if(dir) x = -1;
-    for(int i=0; i<arr_sz; i++)
+    if (constrain > arr_sz)
+    {
+        constrain = 0;
+    }
+    for(int i=0; i<arr_sz - constrain; i++)
     {
         inversion = x * ((2 * i) - arr_sz + 1);
         index = (multiplier * (i + inversion)) % arr_sz;
@@ -16,6 +19,7 @@ void printArray(char* p, int arr_sz, bool dir, int multiplier)
 
 int main()
 {
+    int constrain = 0;
     int lines = 0;
     int multiplier = 0;
     int arr_sz = 0;
@@ -47,15 +51,17 @@ int main()
     std::cin >> multiplier;
     std::cout << "reverse?";
     std::cin >> flag;
+    std::cout << "constrain: ";
+    std::cin >> constrain;
     for(int i=0; i<lines; i++)
     {
         if(flag == 0)
         {
-            printArray(p, arr_sz, false, multiplier);
+            printArray(p, arr_sz, false, multiplier, constrain);
         }
         else
         {
-            printArray(p,arr_sz,true,multiplier);
+            printArray(p,arr_sz,true,multiplier, constrain);
         }
         std::cout << std::endl;
     }
@@ -65,10 +71,10 @@ int main()
 
 /* Design Goals:
  *! Include spaces in the input function
- *  will use dynamic arrays
- *  can print an array backwards
- *  print every nth element
- *  print every nth element backwards
+ *- will use dynamic arrays
+ *- can print an array backwards
+ *- print every nth element
+ *- print every nth element backwards
  *  print the head, tail, last, and any specific element
  *  control output
  *   specify number of lines and character length

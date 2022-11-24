@@ -1,2 +1,0 @@
-input: number of lines: enter multiplier: reverse?constrain: h e r e ' s   s o m e   t e x t 1 1 0 0 0 
-

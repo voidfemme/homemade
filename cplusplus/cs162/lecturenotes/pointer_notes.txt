@@ -1,2 +1,0 @@
-question: So at what point to ram reallocate memory for other tasks?
-	does it always happen when 

@@ -1,4 +1,0 @@
-"dangling pointer" = 
-	where you have a valid pointer in the stack, but it is pointing to invalid memory
-"memory leak" = 
-	

@@ -3,7 +3,7 @@
 void printArray(char* p, int arr_sz, bool dir, int multiplier, int constrain)
 {
     int inversion = 0;
-    int x = 0;
+    int x = (int)dir;
     int index = 0;
     if (constrain > arr_sz)
     {
@@ -11,7 +11,7 @@ void printArray(char* p, int arr_sz, bool dir, int multiplier, int constrain)
     }
     for(int i=0; i<arr_sz - constrain; i++)
     {
-        inversion = x * ((2 * i) - arr_sz + 1);
+        inversion = -x * ((2 * i) - arr_sz + 1);
         index = (multiplier * (i + inversion)) % arr_sz;
         std::cout << p[index]<< " ";
     }
